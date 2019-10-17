@@ -75,3 +75,8 @@
         ];
 
         const results = await Promisse.all(asyncFunctions);
+/*
+        Referências: 
+            https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Usando_promises
+            https://dev.to/afifsohaiii/dealing-with-promises-in-an-array-with-async-await-5d7g
+*/
