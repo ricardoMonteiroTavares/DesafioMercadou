@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        
+    </head>
+    <body>
+        <header>
+            <h1>Ricardo de Monteiro e Tavares - Desafio Mercadou</h1>
+        </header>
+
+        <div id='primo'>
+            <h3>Questão dos Primos</h3>
+            <div>
+                <input>
+            </div>
+            <div>
+                <p>{{ message }}</p>
+            </div>
+            <button>Submeter</button>
+        </div>
+        
+        <div id='balanceado'>
+            <h3>Questão do Balanceamento</h3>
+            <div>
+                <input v-model="str">
+            </div>
+            <div>
+                <p>{{ message }} </p>
+            </div>
+            <button v-on:click="isBalanceado">Submeter</button>
+        </div>
+
+        <div id='fibo'>
+            <h3>Sequência de Fibonacci</h3>
+            <div>
+                <input v-model="value">
+            </div>
+            <div>
+                <p>{{ message }}</p>
+            </div>
+            <button v-on:click="fibonacci">Submeter</button>
+        </div>
+        <script type="text/javascript" src="questao1.js"></script>
+    </body>
+</html>
