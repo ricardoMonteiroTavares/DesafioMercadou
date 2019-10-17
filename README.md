@@ -12,3 +12,6 @@ Este é um repositório destinado a resolver os problemas propostos pela empresa
 4. Foi usado as seguintes frameowrks para resolver a questão 1: 
 - [Vue.js](https://br.vuejs.org/index.html) para Javascript;
 - [Materialize](https://materializecss.com/) para as Estilizações do index.html;
+
+## Acesso ao site construiído para a questão 1
+- [Link da página](https://ricardomonteirotavares.github.io/DesafioMercadou/)
