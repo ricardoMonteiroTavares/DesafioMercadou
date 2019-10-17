@@ -1,45 +1,85 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
         
     </head>
     <body>
-        <header>
-            <h1>Ricardo de Monteiro e Tavares - Desafio Mercadou</h1>
-        </header>
+        <div class="navbar-fixed">
+            <nav>
+                <div class="nav-wrapper">
+                    <h4>Ricardo de Monteiro e Tavares - Desafio Mercadou</h4>
+                </div>
+            </nav>
+        </div>
+        
 
         <div id='primo'>
             <h3>Questão dos Primos</h3>
             <div>
                 <input>
             </div>
-            <div>
-                <p>{{ message }}</p>
+
+            <div class="row">
+                <div class="col s12 m6">
+                    <div class="card blue-grey darken-1">
+                        <div class="card-content white-text">
+                        <span class="card-title">Resposta</span>
+                        <p>{{ message }}</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <button>Submeter</button>
+            <button
+                class="btn waves-effect waves-light"
+            >Submeter</button>
         </div>
         
         <div id='balanceado'>
             <h3>Questão do Balanceamento</h3>
-            <div>
-                <input v-model="str">
+           
+            <div class="row">
+                    <div class="input-field col s6">
+                        <input id='balan' v-model="str">
+                        <label for= 'balan'>Entrada</label>
+                    </div>
+               
+                <div class="col s12 m6">
+                    <div class="card blue-grey darken-1">
+                        <div class="card-content white-text">
+                        <span class="card-title">Resposta</span>
+                        <p>{{ message }}</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div>
-                <p>{{ message }} </p>
-            </div>
-            <button v-on:click="isBalanceado">Submeter</button>
+            <button 
+                v-on:click="isBalanceado"
+                class="btn waves-effect waves-light"
+            >Submeter</button>
         </div>
 
         <div id='fibo'>
             <h3>Sequência de Fibonacci</h3>
             <div>
-                <input v-model="value">
+                <input v-model.number="value" type="number">
             </div>
-            <div>
-                <p>{{ message }}</p>
+            <div class="row">
+                <div class="col s12 m6">
+                    <div class="card blue-grey darken-1">
+                        <div class="card-content white-text">
+                        <span class="card-title">Resposta</span>
+                        <p>{{ message }}</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <button v-on:click="fibonacci">Submeter</button>
+            <button 
+                v-on:click="fibonacci"
+                class="btn waves-effect waves-light"
+            >Submeter</button>
         </div>
         <script type="text/javascript" src="questao1.js"></script>
     </body>
