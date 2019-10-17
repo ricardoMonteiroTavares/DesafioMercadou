@@ -34,7 +34,7 @@
                 >Submeter</button>
             </div>
                 
-            <div id='balanceado'>
+            <div id='balanced'>
                 <h4>Questão do Balanceamento</h4>
                 
         
@@ -50,13 +50,13 @@
                         <div class="small card teal lighten-4">
                             <div class="card-content black-text">
                             <span class="card-title">Resposta:</span>
-                            <p>{{ message }}</p>
+                            <p>{{ balancedMessage }}</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <button 
-                    v-on:click="isBalanceado"
+                    v-on:click="isBalanced"
                     class="btn waves-effect waves-light col s2 offset-s10"
                 >Submeter</button>
             </div>
@@ -75,7 +75,7 @@
                         <div class="small card teal lighten-4">
                             <div class="card-content black-text">
                             <span class="card-title">Resposta:</span>
-                            <p>{{ message }}</p>
+                            <p>{{ fiboMessage }}</p>
                             </div>
                         </div>
                     </div>

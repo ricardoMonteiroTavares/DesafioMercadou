@@ -5,37 +5,42 @@ var app = new Vue({
     }
 });
 
-var app2 = new Vue({
-    el: '#balanceado',
+var app = new Vue({
+    el: '#balanced',
     data: {
-        message: '',
-        str: ''
+        balancedMessage: '',    
+        str: '',
     },
     methods: {
-        isBalanceado: function () {
-            var condicao = 'Balanceado'
-            var pilha = [];
+        isBalanced: function () {
+            var cond = 'Balanceado';
+            var stack = [];
             var c;
+            var top;
             for (var i = 0; i < this.str.length ; i++){
                 c = this.str.charAt(i);
                 if((c == '\{') || (c == '\(') || (c == '\[')){
-                    pilha.push(c);
+                    stack.push(c);
                 }else if ((c == '\}') || (c == '\)') || (c == '\]')){
-                    if((c == '\}') && (pilha[pilha.length-1] == '\{')){
-                        pilha.pop();
-                    }else if ((c == '\)') && (pilha[pilha.length-1] == '\(')){
-                        pilha.pop();
-                    }else if((c == '\]') && (pilha[pilha.length-1] == '\[')){
-                        pilha.pop();
+                    top = stack[stack.length-1];
+
+                    if((c == '\}') && (top == '\{')){
+                        stack.pop();
+                    }else if ((c == '\)') && (top == '\(')){
+                        stack.pop();
+                    }else if((c == '\]') && (top == '\[')){
+                        stack.pop();
                     }else{
-                        condicao = 'Desbalanceado';
+                        cond = 'Desbalanceado';
                         break;
                     }
                 }
             }
-    
-            this.message = condicao;
-        }
+            if((cond == 'Balanceado') && stack.length != 0){
+                cond = 'Desbalanceado';
+            }
+            this.balancedMessage = cond;
+        },
     }
 });
 
@@ -44,7 +49,7 @@ var app3 = new Vue({
     el: '#fibo',
     data: {
         value: null,
-        message: '',
+        fiboMessage: '',
     },
 
     methods: {
@@ -66,7 +71,7 @@ var app3 = new Vue({
                 seq = 'Erro: O valor somente pode ser apenas um número inteiro positivo!'
             }
 
-            this.message = seq.toString();
+            this.fiboMessage = seq.toString();
         }
     }
 });
