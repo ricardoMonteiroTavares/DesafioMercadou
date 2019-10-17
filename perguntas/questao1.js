@@ -13,6 +13,7 @@ var app2 = new Vue({
     },
     methods: {
         isBalanceado: function () {
+            var condicao = 'Balanceado'
             var pilha = [];
             var c;
             for (var i = 0; i < this.str.length ; i++){
@@ -27,17 +28,13 @@ var app2 = new Vue({
                     }else if((c == '\]') && (pilha[pilha.length-1] == '\[')){
                         pilha.pop();
                     }else{
-                        this.message = 'Desbalanceado';
+                        condicao = 'Desbalanceado';
                         break;
                     }
                 }
             }
-            
-            if(pilha.length == 0){
-                this.message = 'Balanceado';
-            }else{
-                this.message = 'Desbalanceado';
-            }
+    
+            this.message = condicao;
         }
     }
 });
