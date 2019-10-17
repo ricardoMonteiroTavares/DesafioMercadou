@@ -3,12 +3,13 @@ var app = new Vue({
     data: {
         value: null,
         primeMessage: '',
+        show: false,
     },
     methods: {
         primeNumbers: function(){
             var num = parseInt(this.value);
             if(num > 0){
-                var seq;
+                var seq = [];
                 var i = num - 1;
                 while(i >= 1){
                     if(((num % i) == 0) && (i != 1)){
@@ -26,6 +27,7 @@ var app = new Vue({
             }else{
                 this.primeMessage = 'Erro: O valor somente pode ser apenas um número inteiro positivo, exceto 0!';
             }
+            this.show = true;
         }
     }
 });
@@ -35,6 +37,7 @@ var app = new Vue({
     data: {
         balancedMessage: '',    
         str: '',
+        show: false,
     },
     methods: {
         isBalanced: function () {
@@ -65,6 +68,7 @@ var app = new Vue({
                 cond = 'Desbalanceado';
             }
             this.balancedMessage = cond;
+            this.show = true;
         },
     }
 });
@@ -75,6 +79,7 @@ var app3 = new Vue({
     data: {
         value: null,
         fiboMessage: '',
+        show: false,
     },
 
     methods: {
@@ -97,6 +102,7 @@ var app3 = new Vue({
             }
 
             this.fiboMessage = seq.toString();
+            this.show = true;
         }
     }
 });
