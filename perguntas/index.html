@@ -15,10 +15,10 @@
         <main class="row">
             <div class="col s8 offset-s2">
             <div id='primo'>
-                <h4>Questão dos Primos</h4>
+                <h4>Item a) Sequência de Primos</h4>
                 <div class="row">
                     <div class="input-field col s12">
-                        <input v-model="str" id="input" type="text" class="validate">
+                        <input v-model.number="value" id="input" type="text" class="validate">
                         <label class="active" for="input">Entrada</label>
                     </div>
                 </div>
@@ -28,18 +28,19 @@
                         <div class="small card teal lighten-4">
                             <div class="card-content black-text">
                             <span class="card-title">Resposta:</span>
-                            <p>{{ message }}</p>
+                            <p>{{ primeMessage }}</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <button
+                    v-on:click="primeNumbers"
                     class="btn waves-effect waves-light col s2 offset-s10"
                 >Submeter</button>
             </div>
                 
             <div id='balanced'>
-                <h4>Questão do Balanceamento</h4>
+                <h4>Item b) Balanceamento</h4>
                 
         
                 <div class="row">
@@ -66,7 +67,7 @@
             </div>
     
             <div id='fibo'>
-                <h4>Sequência de Fibonacci</h4>
+                <h4>Item c) Sequência de Fibonacci</h4>
                 <div class="row">
                     <div class="input-field col s12">
                         <input v-model.number="value" id="input" type="text" class="validate">

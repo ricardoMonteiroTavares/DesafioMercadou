@@ -1,7 +1,32 @@
 var app = new Vue({
     el: '#primo',
     data: {
-        message: ''
+        value: null,
+        primeMessage: '',
+    },
+    methods: {
+        primeNumbers: function(){
+            var num = parseInt(this.value);
+            if(num > 0){
+                var seq;
+                var i = num - 1;
+                while(i >= 1){
+                    if(((num % i) == 0) && (i != 1)){
+                        num --;
+                        i = num - 1;
+                    }else if(i == 1){
+                        seq.splice(0,0,num);
+                        num --;
+                        i = num - 1;
+                    }else{
+                        i--;
+                    }
+                }
+                this.primeMessage = seq.toString();
+            }else{
+                this.primeMessage = 'Erro: O valor somente pode ser apenas um número inteiro positivo, exceto 0!';
+            }
+        }
     }
 });
 
