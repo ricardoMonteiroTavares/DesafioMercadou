@@ -7,90 +7,88 @@
         
     </head>
     <body>
-        <header class="navbar-fixed teal accent-3">
-            
-            <nav class="nav-wrapper">
-                <h4>Ricardo de Monteiro e Tavares - Desafio Mercadou</h4>
-            </nav>
-            
-        </header>
         
-
-        <div id='primo'>
-            <h3>Questão dos Primos</h3>
-            <div class="row">
-                <div class="input-field col s6">
-                    <input v-model="str" id="input" type="text" class="validate">
-                    <label class="active" for="input">Entrada</label>
+        <main class="row">
+            <div class="col s8 offset-s2">
+            <div id='primo'>
+                <h4>Questão dos Primos</h4>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input v-model="str" id="input" type="text" class="validate">
+                        <label class="active" for="input">Entrada</label>
+                    </div>
                 </div>
-            </div>
-
-            <div class="row">
-                <div class="col s12 m6">
-                    <div class="small card teal accent-4">
-                        <div class="card-content black-text">
-                        <span class="card-title">Resposta:</span>
-                        <p>{{ message }}</p>
+    
+                <div class="row">
+                    <div class="col s12">
+                        <div class="small card teal lighten-4">
+                            <div class="card-content black-text">
+                            <span class="card-title">Resposta:</span>
+                            <p>{{ message }}</p>
+                            </div>
                         </div>
                     </div>
                 </div>
+                <button
+                    class="btn waves-effect waves-light col s2 offset-s10"
+                >Submeter</button>
             </div>
-            <button
-                class="btn waves-effect waves-light"
-            >Submeter</button>
-        </div>
+                
+            <div id='balanceado'>
+                <h4>Questão do Balanceamento</h4>
+                
         
-        <div id='balanceado'>
-            <h3>Questão do Balanceamento</h3>
-            
-  
-            <div class="row">
-                <div class="input-field col s6">
-                    <input v-model="str" id="input" type="text" class="validate">
-                    <label class="active" for="input">Entrada</label>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input v-model="str" id="input" type="text" class="validate">
+                        <label class="active" for="input">Entrada</label>
+                    </div>
                 </div>
-            </div>
-                                    
-            <div class="row">
-                <div class="col s12 m6">
-                    <div class="small card teal accent-4">
-                        <div class="card-content black-text">
-                        <span class="card-title">Resposta:</span>
-                        <p>{{ message }}</p>
+                                        
+                <div class="row">
+                    <div class="col s12">
+                        <div class="small card teal lighten-4">
+                            <div class="card-content black-text">
+                            <span class="card-title">Resposta:</span>
+                            <p>{{ message }}</p>
+                            </div>
                         </div>
                     </div>
                 </div>
+                <button 
+                    v-on:click="isBalanceado"
+                    class="btn waves-effect waves-light col s2 offset-s10"
+                >Submeter</button>
             </div>
-            <button 
-                v-on:click="isBalanceado"
-                class="btn waves-effect waves-light"
-            >Submeter</button>
-        </div>
-
-        <div id='fibo'>
-            <h3>Sequência de Fibonacci</h3>
-            <div class="row">
-                <div class="input-field col s6">
-                    <input v-model.number="value" id="input" type="text" class="validate">
-                    <label class="active" for="input">Entrada</label>
+    
+            <div id='fibo'>
+                <h4>Sequência de Fibonacci</h4>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input v-model.number="value" id="input" type="text" class="validate">
+                        <label class="active" for="input">Entrada</label>
+                    </div>
                 </div>
-            </div>
-
-            <div class="row">
-                <div class="col s12 m6">
-                    <div class="small card teal accent-4">
-                        <div class="card-content black-text">
-                        <span class="card-title">Resposta:</span>
-                        <p>{{ message }}</p>
+    
+                <div class="row">
+                    <div class="col s12">
+                        <div class="small card teal lighten-4">
+                            <div class="card-content black-text">
+                            <span class="card-title">Resposta:</span>
+                            <p>{{ message }}</p>
+                            </div>
                         </div>
                     </div>
                 </div>
+                <button 
+                    v-on:click="fibonacci"
+                    class="btn waves-effect waves-light col s2 offset-s10"
+                >Submeter</button>
             </div>
-            <button 
-                v-on:click="fibonacci"
-                class="btn waves-effect waves-light"
-            >Submeter</button>
-        </div>
+            </div>
+        </main>
+
+        
         <script type="text/javascript" src="questao1.js"></script>
     </body>
 </html>
