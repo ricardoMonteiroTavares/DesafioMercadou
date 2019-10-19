@@ -18,7 +18,21 @@ var app = new Vue({
                 // é armazenado a mensagem de erro e mostra para o usuário.
                 if(num > 0){
                     var seq = '';                           // Inicializa a sequência
-                    var i = num - 1;                        // Cria e inicializa o 2º contador regressivo
+                    var flag = false;                       // Bandeira de verificação se o número é maior do que 2.
+                    
+                    // Verifico se o número informado é maior do que 2?
+                    //      Caso verdadeiro: Marca-se a Bandeira(flag) para inserir o valor 2 na sequência mais tarde
+                    //      Motivo: Pois o algorítmo não verifica todos casos onde num é par.
+                    if(num >= 2){
+                        flag = true;                        // Marca-se a Bandeira(flag)
+                    }
+
+                    // O número informado é par?
+                    //   Se sim: decremento num, pois todo número par não é primo exceto o valor 2
+                    if((num % 2) == 0){
+                        num--;
+                    }
+                    var i = num - 2;                        // Cria e inicializa o 2º contador regressivo
 
                     // Para cada número maior ou igual a 1 do contador regressivo i, faça:
                     while(i >= 1){
@@ -26,20 +40,24 @@ var app = new Vue({
                         // O resto da divisão de num com i é zero e o divisor(i) é diferente de 1? Neste caso, o número 1 é divisor univseral
                         if(((num % i) == 0) && (i != 1)){
                             // Significa que o numero do contador regressivo num não é primo, portanto:
-                            num --;                 // num é decrementado
-                            i = num - 1;            // e o contdor regressivo i é reiniciado
+                            num -= 2;               // num é decrementado para o próximo número ímpar
+                            i = num - 2;            // e o contdor regressivo i é reiniciado
 
                         // O valor de i é o divisor universal?
                         }else if(i == 1){
                             // Em sendo o divisor universal, significa que o numero armazenado em num
                             // é primo, portanto:
                             seq = num.toString() + ', ' + seq;          // O valor de num é inserido no início da sequência
-                            num --;                                     // num é decrementado
-                            i = num - 1;                                // e o contador regressivo i é reiniciado
+                            num -= 2;                                   // num é decrementado para o próximo número ímpar
+                            i = num - 2;                                // e o contador regressivo i é reiniciado
                         }else{
-                            // Caso não seja nenhum dos dois, decrementa-se o valor do contador regressivo i
-                            i--;
+                            // Caso não seja nenhum dos dois, decrementa-se o valor do contador regressivo i para o próximo número ímpar
+                            i -= 2;
                         }
+                    }
+                    // Aqui verifica-se o valor da flag, para poder inserir o valor 2 em caso afirmativo
+                    if(flag){
+                        seq = '2, ' + seq;          // O valor de 2 é inserido no início da sequência
                     }
                     // Após o término da execução, a sequência gerada é repassada para a primeMessage sem a vírgula no final
                     this.primeMessage = seq.slice(0,(seq.length-2));
